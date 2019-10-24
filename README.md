@@ -1,1 +1,26 @@
-# Logistic-Regression-How-to-compute-gradients-of-binary-cross-entropy-loss
+<h1>Logistic Regression - How to compute gradients of binary cross entropy loss</h1>
+<p align="left" style="font-size:13px;"><b>Christoph Winkler</b><br>
+<i>M. Sc. Business Information Systems, Data Scientist.<br>
+Generative Modeling is simply about modeling "How the world could be" and not necessarily "How the world actually is".</i></p>
+
+Logistic Regression is one of the most popular statistical models for classification. Actually the model is a special case of a neural network. In this article the optimization technique to optimize parameters of the model is discussed. This is a simple introduction to understand backpropagation in neural networks. 
+
+<h2>Model</h2>
+MODEL
+
+<h2>Loss</h2>
+The loss used that is minimized in Logistic Regression is called binary cross entropy. It decreases if the probabilities of the predictions get closer to the class labels 0 and 1. 
+
+LOSS
+
+<h2>Computation Graph</h2>
+
+COMPUTATION GRAPH
+
+<h2>Derivatives for Gradient Descent</h2>
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{120}&space;\newline&space;L&space;=&space;-\sum_{i}^{m}&space;y\log(g)&space;&plus;&space;(1&space;-&space;y)\log(1-g)&space;\newline&space;g&space;=&space;\sigma&space;(z)&space;=&space;\frac{1}{1&plus;e^{-z}}&space;\newline&space;z&space;=&space;wx^{T}&space;&plus;&space;b&space;\newline\newline&space;\frac{\partial&space;L}{\partial&space;w}&space;=&space;\frac{\partial&space;L}{\partial&space;g}\frac{\partial&space;g}{\partial&space;z}\frac{\partial&space;z}{\partial&space;w}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;\newline&space;L&space;=&space;-\sum_{i}^{m}&space;y\log(g)&space;&plus;&space;(1&space;-&space;y)\log(1-g)&space;\newline&space;g&space;=&space;\sigma&space;(z)&space;=&space;\frac{1}{1&plus;e^{-z}}&space;\newline&space;z&space;=&space;wx^{T}&space;&plus;&space;b&space;\newline\newline&space;\frac{\partial&space;L}{\partial&space;w}&space;=&space;\frac{\partial&space;L}{\partial&space;g}\frac{\partial&space;g}{\partial&space;z}\frac{\partial&space;z}{\partial&space;w}" title="\newline L = -\sum_{i}^{m} y\log(g) + (1 - y)\log(1-g) \newline g = \sigma (z) = \frac{1}{1+e^{-z}} \newline z = wx^{T} + b \newline\newline \frac{\partial L}{\partial w} = \frac{\partial L}{\partial g}\frac{\partial g}{\partial z}\frac{\partial z}{\partial w}" /></a>
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{120}&space;\newline&space;\frac{\partial&space;L}{\partial&space;g}&space;=&space;\sum_{i}^{m}&space;\frac{1-y}{1-g}&space;-&space;\frac{y}{g}&space;\newline\newline\newline&space;\frac{\partial&space;g}{\partial&space;z}&space;=&space;\frac{e^{-z}}{(e^{-z}&space;&plus;&space;1)^2}&space;=&space;\frac{1}{e^{-z}&space;&plus;&space;1}\frac{e^{-z}}{e^{-z}&space;&plus;&space;1}&space;\newline&space;\frac{\partial&space;g}{\partial&space;z}&space;=&space;\frac{1}{e^{-z}&space;&plus;&space;1}\frac{(e^{-z}&space;&plus;&space;1)&space;-&space;1}{e^{-z}&space;&plus;&space;1}&space;\newline&space;\frac{\partial&space;g}{\partial&space;z}&space;=&space;\frac{1}{e^{-z}&space;&plus;&space;1}\left&space;(\frac{e^{-z}&space;&plus;&space;1}{e^{-z}&space;&plus;&space;1}-\frac{1}{e^{-z}&space;&plus;&space;1}&space;\right&space;)&space;\newline&space;\frac{\partial&space;g}{\partial&space;z}&space;=&space;\frac{1}{e^{-z}&space;&plus;&space;1}\left&space;(1-\frac{1}{e^{-z}&space;&plus;&space;1}&space;\right&space;)&space;=&space;\sigma&space;(z)(1-\sigma&space;(z))&space;\newline\newline\newline&space;\frac{\partial&space;z}{\partial&space;w}&space;=&space;x^{T}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;\newline&space;\frac{\partial&space;L}{\partial&space;g}&space;=&space;\sum_{i}^{m}&space;\frac{1-y}{1-g}&space;-&space;\frac{y}{g}&space;\newline\newline\newline&space;\frac{\partial&space;g}{\partial&space;z}&space;=&space;\frac{e^{-z}}{(e^{-z}&space;&plus;&space;1)^2}&space;=&space;\frac{1}{e^{-z}&space;&plus;&space;1}\frac{e^{-z}}{e^{-z}&space;&plus;&space;1}&space;\newline&space;\frac{\partial&space;g}{\partial&space;z}&space;=&space;\frac{1}{e^{-z}&space;&plus;&space;1}\frac{(e^{-z}&space;&plus;&space;1)&space;-&space;1}{e^{-z}&space;&plus;&space;1}&space;\newline&space;\frac{\partial&space;g}{\partial&space;z}&space;=&space;\frac{1}{e^{-z}&space;&plus;&space;1}\left&space;(\frac{e^{-z}&space;&plus;&space;1}{e^{-z}&space;&plus;&space;1}-\frac{1}{e^{-z}&space;&plus;&space;1}&space;\right&space;)&space;\newline&space;\frac{\partial&space;g}{\partial&space;z}&space;=&space;\frac{1}{e^{-z}&space;&plus;&space;1}\left&space;(1-\frac{1}{e^{-z}&space;&plus;&space;1}&space;\right&space;)&space;=&space;\sigma&space;(z)(1-\sigma&space;(z))&space;\newline\newline\newline&space;\frac{\partial&space;z}{\partial&space;w}&space;=&space;x^{T}" title="\newline \frac{\partial L}{\partial g} = \sum_{i}^{m} \frac{1-y}{1-g} - \frac{y}{g} \newline\newline\newline \frac{\partial g}{\partial z} = \frac{e^{-z}}{(e^{-z} + 1)^2} = \frac{1}{e^{-z} + 1}\frac{e^{-z}}{e^{-z} + 1} \newline \frac{\partial g}{\partial z} = \frac{1}{e^{-z} + 1}\frac{(e^{-z} + 1) - 1}{e^{-z} + 1} \newline \frac{\partial g}{\partial z} = \frac{1}{e^{-z} + 1}\left (\frac{e^{-z} + 1}{e^{-z} + 1}-\frac{1}{e^{-z} + 1} \right ) \newline \frac{\partial g}{\partial z} = \frac{1}{e^{-z} + 1}\left (1-\frac{1}{e^{-z} + 1} \right ) = \sigma (z)(1-\sigma (z)) \newline\newline\newline \frac{\partial z}{\partial w} = x^{T}" /></a>
+
+
