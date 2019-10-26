@@ -3,13 +3,15 @@
 <i>M. Sc. Business Information Systems, Data Scientist.<br>
 Generative Modeling is simply about modeling "How the world could be" and not necessarily "How the world actually is".</i></p>
 
-Logistic Regression is one of the most popular statistical models for classification. Actually it is a special case of a neural networks and therefore a simple introduction to understand backpropagation in neural networks. In this article the theoretical foundation on how to derive the equations to optimize the model parameters is discussed. In particular the derivation of the equations for gradient descent is shown. 
+Logistic regression is one of the most popular machine learning models for classification. Actually logistic regression is a special case of a neural networks and is therefore an appropriate introduction to learn how backpropagation in neural networks works. In this article the theoretical foundation on how to derive the equations for optimization of the model parameters is discussed. In particular the derivation of the equations for gradient descent is shown. 
 
 <h2>Model</h2>
+Basically logistic regression is a classification model that tries to learn from a data set x if a certain data point belongs to class zero or class one. In comparison to neural networks logistic regression can also have multiple input nodes which represent the features in a data set. Additionally, logistic regression has no hidden layer and only a single output node with a sigmoid activation function. The sigmoid activation function is applied to transform logits z without any upper or lower bound into probabilities g. If the weight tensor w that represents the connection between input nodes and output node takes on a large activation for a certain input data point, the probability for class one is also quite large. It is also important to note that in contrast to linear regression logistic regression can only predict probabilities between zero and one and therefore can not be used for regression.
+
 MODEL
 
 <h2>Loss</h2>
-The loss used that is minimized in Logistic Regression is called binary cross entropy. It decreases if the probabilities of the predictions get closer to the class labels 0 and 1. 
+The loss that is minimized in Logistic Regression is known as binary cross entropy. Binary cross entropy measures the performance of a machine learning model. It decreases if the probabilities of the predictions get closer to the true class labels (0 or 1).  
 
 LOSS
 
