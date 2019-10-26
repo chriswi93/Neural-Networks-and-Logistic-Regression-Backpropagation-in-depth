@@ -6,18 +6,26 @@ Generative Modeling is simply about modeling "How the world could be" and not ne
 Logistic regression is one of the most popular machine learning models for classification. Actually logistic regression is a special case of a neural networks and is therefore an appropriate introduction to learn how backpropagation in neural networks works. In this article the theoretical foundation on how to derive the equations for optimization of the model parameters is discussed. In particular the derivation of the equations for gradient descent is shown. 
 
 <h2>Model</h2>
-Basically logistic regression is a classification model that tries to learn from a data set x if a certain data point belongs to class zero or class one. In comparison to neural networks logistic regression can also have multiple input nodes which represent the features in a data set. Additionally, logistic regression has no hidden layer and only a single output node with a sigmoid activation function. The sigmoid activation function is applied to transform logits z without any upper or lower bound into probabilities g. If the weight tensor w that represents the connection between input nodes and output node takes on a large activation for a certain input data point, the probability for class one is also quite large. It is also important to note that in contrast to linear regression logistic regression can only predict probabilities between zero and one and therefore can not be used for regression.
+Basically logistic regression is a classification model that tries to learn from data x if a certain data point belongs to class zero or  one. It is also important to note that in contrast to linear regression logistic regression can only predict probabilities between zero and one and therefore can only be used for classification and not regression. In comparison to neural networks also has multiple input nodes which represent the features of a data set. Additionally, logistic regression has no hidden layer and only a single output node with a sigmoid activation function. The sigmoid activation function is applied to transform logits z without any upper or lower bound into probabilities g. If the weight tensor w that represents the connection between input nodes and output node takes on a large activation for a certain input data point, the probability for class one is also quite large.
 
-<img src="logistic_regression.png" align="middle"></img>
+<p align="center">
+<img src="logistic_regression.png"></img>
+</p>
 
-MODEL
+<h2>Loss and Optimization</h2>
+The loss that is minimized during training is known as binary cross entropy. It decreases if the predicted values of the class labels get closer to the true class labels and is therefore an appropriate method to measure the learning progress and convergence of the model.
+<p align="center">
+<img src="loss.png"></img>
+</p>
 
-<h2>Loss</h2>
-The loss that is minimized in Logistic Regression is known as binary cross entropy. Binary cross entropy measures the performance of a machine learning model. It decreases if the probabilities of the predictions get closer to the true class labels (0 or 1).  
-
-LOSS
+In order to improve the performance of the model we have to change the weights w and the bias term b. The optimization technique gradient descent helps us to determine in which direction we have to change the trainable variables. In particular gradient descent computes the gradients of the variables to determine the direction of the steepest descent of the loss function. The learning rate equals the step size on the loss function in each iteration. If the learning rate is chosen very large the learning speed increases, but the algorithm might jump over the global minimum and there never converges. In contrast if the learning rate is chosen very small the learning speed is very low and the computational efforts for large data sets increase. Therefore, it is important to choose the learning rate with caution. In order to use gradient descent we have to derive the equations for gradients in our the loss function for each  trainable variable. This is best explained using a so called computation graph. Computation graphs are widely used in mathematical applications to discover dependencies which helps us to derive the equations for the gradients.
 
 <h2>Computation Graph</h2>
+In general the computation graph in the context of optimization is the application of the chain rule in calculus. 
+
+<p align="center">
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{120}&space;\frac{\partial&space;L}{\partial&space;w}&space;=&space;\frac{\partial&space;L}{\partial&space;g}\frac{\partial&space;g}{\partial&space;z}\frac{\partial&space;z}{\partial&space;w}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;\frac{\partial&space;L}{\partial&space;w}&space;=&space;\frac{\partial&space;L}{\partial&space;g}\frac{\partial&space;g}{\partial&space;z}\frac{\partial&space;z}{\partial&space;w}" title="\frac{\partial L}{\partial w} = \frac{\partial L}{\partial g}\frac{\partial g}{\partial z}\frac{\partial z}{\partial w}" /></a>
+</p>
 
 COMPUTATION GRAPH
 
