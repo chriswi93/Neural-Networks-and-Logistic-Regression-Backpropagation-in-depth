@@ -3,7 +3,7 @@
 <i>M. Sc. Business Information Systems, Data Scientist.<br>
 Generative Modeling is simply about modeling "How the world could be" and not necessarily "How the world actually is".</i></p>
 
-Logistic Regression is one of the most popular statistical models for classification. Actually the model is a special case of a neural network. In this article the optimization technique to optimize parameters of the model is discussed. This is a simple introduction to understand backpropagation in neural networks. 
+Logistic Regression is one of the most popular statistical models for classification. Actually it is a special case of a neural networks and therefore a simple introduction to understand backpropagation in neural networks. In this article the theoretical foundation on how to derive the equations to optimize the model parameters is discussed. In particular the derivation of the equations for gradient descent is shown. 
 
 <h2>Model</h2>
 MODEL
