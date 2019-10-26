@@ -8,6 +8,8 @@ Logistic regression is one of the most popular machine learning models for class
 <h2>Model</h2>
 Basically logistic regression is a classification model that tries to learn from a data set x if a certain data point belongs to class zero or class one. In comparison to neural networks logistic regression can also have multiple input nodes which represent the features in a data set. Additionally, logistic regression has no hidden layer and only a single output node with a sigmoid activation function. The sigmoid activation function is applied to transform logits z without any upper or lower bound into probabilities g. If the weight tensor w that represents the connection between input nodes and output node takes on a large activation for a certain input data point, the probability for class one is also quite large. It is also important to note that in contrast to linear regression logistic regression can only predict probabilities between zero and one and therefore can not be used for regression.
 
+<img src="logistic_regression.png" align="middle"></img>
+
 MODEL
 
 <h2>Loss</h2>
