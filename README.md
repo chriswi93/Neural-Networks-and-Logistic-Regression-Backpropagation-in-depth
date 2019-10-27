@@ -105,6 +105,11 @@ def optimize(self, dL_dw, dL_db, learning_rate):
   self.b = self.b - dL_db * learning_rate
 ```
 
+Now let's train the model for 100 epochs. That means that the model sees every data point 100 times and the model parameters are also updated 100 times. We create a sample data set. On the left side the sample data set is not centered and on the right side the sample data set is centered to μ = 0. Below you can see how it affects convergence. The darker the area in the image the more confident the model is about the class of data point in this area.
+<p align="center">
+<img src="classification_sample.png"></img>
+</p>
+
 That's all you have to know about gradient descent. There are many extensions of gradient descent that are not discussed in this article. In the next article we will discuss one of most popular extensions stochastic gradient descent and why it makes sense to use it. 
 <br><br>
 Thank you for reading my article! I hope it helps you to get a better understanding on how backpropagation in neural networks actually works.
