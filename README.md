@@ -105,7 +105,7 @@ def optimize(self, dL_dw, dL_db, learning_rate):
   self.b = self.b - dL_db * learning_rate
 ```
 
-Now let's train the model for 100 epochs. That means that the model sees every data point 100 times and the model parameters are also updated 100 times. We create a sample data set. On the left side the sample data set is not centered and on the right side the sample data set is centered to μ = 0. Below you can see how it affects convergence. The darker the area in the image the more confident the model is about the class of data point in this area.
+Now let's train the model for 100 epochs. That means the model can see every data point 100 times and the model parameters are also updated 100 times. We also create a sample data set with two classes. On the left side the sample data set is not centered and on the right side the sample data set is centered to μ = 0. Below you can see how scaling data affects convergence of a model. The darker the area in the image is the more confident the model is about the class of a data point in this area.
 <p align="center">
 <img src="classification_sample.png"></img>
 </p>
