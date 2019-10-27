@@ -73,6 +73,6 @@ Last step of gradient descent is to scale the gradients by the learning rate and
 <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{120}&space;\newline&space;w&space;=&space;w&space;-&space;\frac{\partial&space;L}{\partial&space;w}&space;*&space;learningrate&space;\newline&space;b&space;=&space;b&space;-&space;\frac{\partial&space;L}{\partial&space;b}&space;*&space;learningrate" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;\newline&space;w&space;=&space;w&space;-&space;\frac{\partial&space;L}{\partial&space;w}&space;*&space;learningrate&space;\newline&space;b&space;=&space;b&space;-&space;\frac{\partial&space;L}{\partial&space;b}&space;*&space;learningrate" title="\newline w = w - \frac{\partial L}{\partial w} * learningrate \newline b = b - \frac{\partial L}{\partial b} * learningrate" /></a>
 </p>
 
-That's all you have to know about gradient descent. There are many extensions that are not discussed in this article, but in another article we will discuss stochastic gradient descent and why it makes sense to use it. 
+That's all you have to know about gradient descent. There are many extensions that are not discussed in this article. Therefore will discusss stochastic gradient descent in another article and why it makes sense to use it. 
 
-Thank you for reading my article! I hope it will help you to get a better understanding on how backpropagation in neural networks actually works.
+Thank you for reading my article! I hope it helps you to get a better understanding on how backpropagation in neural networks actually works.
