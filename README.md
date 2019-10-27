@@ -75,6 +75,35 @@ Last step of gradient descent is to scale the gradients by the learning rate and
 
 In practice forward propagation and backpropagation are repeated several times. It is guranteed that the parameters converge to the global minimum in logistic regression. However, for a neural network that approximates a function with non linear relationships only convergence to a local minimum is guranteed. Below you can find an implementation in Python on how to compute the gradients and update the variables in logistic regression.<br>
 
+```python
+def predict(self, x):
+  z = np.matmul(self.w, x.T) + self.b
+  g = sigmoid(z)
+  return z, g
+    
+def compute_gradients(self, x, y):
+# forward pass to get logits (z) and probability (g) values
+z, g = self.predict(x)
+        
+# compute gradients
+dL_dg = (1 - y) / (1 - g) - y / g #-(g - y) / ((g - 1) * g)
+dg_dz = g * (1 - g)
+dz_w = x.T
+        
+ # apply chain rule and compute sum of gradients in batch
+ dL_dw = np.sum(dL_dg * dg_dz * dz_w, axis=1)
+ dL_db = np.sum(dL_dg * dg_dz, axis=1)
+        
+ # compute average of gradients in batch
+ dL_dw /= len(y)
+ dL_db /= len(y)
+        
+ return dL_dw, dL_db
+        
+ def optimize(self, dL_dw, dL_db, learning_rate):
+  self.w = self.w - dL_dw * learning_rate
+  self.b = self.b - dL_db * learning_rate
+```
 
 That's all you have to know about gradient descent. There are many extensions that are not discussed in this article. Therefore, we will discusss stochastic gradient descent and why it makes sense to use it in another article. 
 <br><br>
