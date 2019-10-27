@@ -110,7 +110,7 @@ Now let's create a data set with 100,000 samples and two different classes gener
 <img src="classification_sample.png"></img>
 </p>
 
-As you can see the convergence of the model trained on centered data with μ = 0 is much better. Additionally, you can compare the logged accuracy and binary cross entropy loss for some epochs on a hold out test set.
+As you can see the convergence of the model trained on centered data with μ = 0 is much better. Additionally, you can compare below the logged accuracy and binary cross entropy loss for some epochs on a hold out test set.
 
 <p align="center">
 <img src="loss_sample.png"></img>
