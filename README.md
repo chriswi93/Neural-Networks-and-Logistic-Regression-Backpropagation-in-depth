@@ -43,7 +43,7 @@ If we want to compute the gradient of a dependent variable w or b on L, we have 
 
 <h2>Derivatives for Gradient Descent</h2>
 
-So let's compute the first derivative of the loss beginning in the first node on the right.
+So let's compute the first derivative of the loss beginning with the first node on the right.
 
 <p align="center">
 <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{120}&space;\frac{\partial&space;L}{\partial&space;g}&space;=&space;\frac{1-y}{1-g}&space;-&space;\frac{y}{g}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;\frac{\partial&space;L}{\partial&space;g}&space;=&space;\frac{1-y}{1-g}&space;-&space;\frac{y}{g}" title="\frac{\partial L}{\partial g} = \frac{1-y}{1-g} - \frac{y}{g}" /></a>
