@@ -82,13 +82,13 @@ def predict(self, x):
   return z, g
     
 def compute_gradients(self, x, y):
-# forward pass to get logits (z) and probability (g) values
-z, g = self.predict(x)
+  # forward pass to get logits (z) and probability (g) values
+  z, g = self.predict(x)
         
-# compute gradients
-dL_dg = (1 - y) / (1 - g) - y / g #-(g - y) / ((g - 1) * g)
-dg_dz = g * (1 - g)
-dz_w = x.T
+  # compute gradients
+  dL_dg = (1 - y) / (1 - g) - y / g #-(g - y) / ((g - 1) * g)
+  dg_dz = g * (1 - g)
+  dz_w = x.T
         
  # apply chain rule and compute sum of gradients in batch
  dL_dw = np.sum(dL_dg * dg_dz * dz_w, axis=1)
