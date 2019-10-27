@@ -1,4 +1,4 @@
-<h1>Neural Networks and Logistic Regression - Backpropagation in Detail</h1>
+<h1>Neural Networks and Logistic Regression - Backpropagation in depth</h1>
 <p align="left" style="font-size:13px;"><b>Christoph Winkler</b><br>
 <i>M. Sc. Business Information Systems, Data Scientist.<br>
 Generative Modeling is simply about modeling "How the world could be" and not necessarily "How the world actually is".</i></p>
