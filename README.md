@@ -90,21 +90,21 @@ def compute_gradients(self, x, y):
   dg_dz = g * (1 - g)
   dz_w = x.T
         
- # apply chain rule and compute sum of gradients in batch
- dL_dw = np.sum(dL_dg * dg_dz * dz_w, axis=1)
- dL_db = np.sum(dL_dg * dg_dz, axis=1)
+  # apply chain rule and compute sum of gradients in batch
+  dL_dw = np.sum(dL_dg * dg_dz * dz_w, axis=1)
+  dL_db = np.sum(dL_dg * dg_dz, axis=1)
         
- # compute average of gradients in batch
- dL_dw /= len(y)
- dL_db /= len(y)
+  # compute average of gradients in batch
+  dL_dw /= len(y)
+  dL_db /= len(y)
         
- return dL_dw, dL_db
+  return dL_dw, dL_db
         
- def optimize(self, dL_dw, dL_db, learning_rate):
+def optimize(self, dL_dw, dL_db, learning_rate):
   self.w = self.w - dL_dw * learning_rate
   self.b = self.b - dL_db * learning_rate
 ```
 
-That's all you have to know about gradient descent. There are many extensions that are not discussed in this article. Therefore, we will discusss stochastic gradient descent and why it makes sense to use it in another article. 
+That's all you have to know about gradient descent. There are many extensions of gradient descent that are not discussed in this article. In the next article we will discuss one of most popular extensions stochastic gradient descent and why it makes sense to use it. 
 <br><br>
 Thank you for reading my article! I hope it helps you to get a better understanding on how backpropagation in neural networks actually works.
