@@ -110,6 +110,12 @@ Now let's train the model for 100 epochs. That means that the model sees every d
 <img src="classification_sample.png"></img>
 </p>
 
+As you can see the  convergence of the model trained on centered data with μ = 0 is much better. Therefore, please always normalize or scale your data set. It can greatly affect the model performance. Below you can compare the logged accuracy and binary cross entropy loss for some epochs.
+
+<p align="center">
+<img src="loss_sample.png"></img>
+</p>
+
 That's all you have to know about gradient descent. There are many extensions of gradient descent that are not discussed in this article. In the next article we will discuss one of most popular extensions stochastic gradient descent and why it makes sense to use it. 
 <br><br>
 Thank you for reading my article! I hope it helps you to get a better understanding on how backpropagation in neural networks actually works.
