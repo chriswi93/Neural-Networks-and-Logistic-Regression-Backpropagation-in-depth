@@ -73,7 +73,9 @@ Last step of gradient descent is to scale the gradients by the learning rate and
 <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{120}&space;\newline&space;w&space;=&space;w&space;-&space;\frac{\partial&space;L}{\partial&space;w}&space;*&space;learningrate&space;\newline&space;b&space;=&space;b&space;-&space;\frac{\partial&space;L}{\partial&space;b}&space;*&space;learningrate" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;\newline&space;w&space;=&space;w&space;-&space;\frac{\partial&space;L}{\partial&space;w}&space;*&space;learningrate&space;\newline&space;b&space;=&space;b&space;-&space;\frac{\partial&space;L}{\partial&space;b}&space;*&space;learningrate" title="\newline w = w - \frac{\partial L}{\partial w} * learningrate \newline b = b - \frac{\partial L}{\partial b} * learningrate" /></a>
 </p>
 
-In practice forward propagation and backpropagation are repeated several times. It is guranteed that the parameters converge to the global minimum in logistic regression. However, for a neural network that approximates a function with non linear relationships only convergence to a local minimum is guranteed. <br>
+In practice forward propagation and backpropagation are repeated several times. It is guranteed that the parameters converge to the global minimum in logistic regression. However, for a neural network that approximates a function with non linear relationships only convergence to a local minimum is guranteed. Below you can find an implementation in Python on how to compute the gradients and update the variables in logistic regression.<br>
+
+
 That's all you have to know about gradient descent. There are many extensions that are not discussed in this article. Therefore, we will discusss stochastic gradient descent and why it makes sense to use it in another article. 
 <br><br>
 Thank you for reading my article! I hope it helps you to get a better understanding on how backpropagation in neural networks actually works.
