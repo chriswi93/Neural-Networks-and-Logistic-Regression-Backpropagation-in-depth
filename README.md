@@ -110,11 +110,11 @@ Now let's create a data set with 100,000 samples and two different classes gener
 <img src="classification_sample.png"></img>
 </p>
 
-As you can see the convergence of the model trained on centered data with μ = 0 is much better. Additionally, you can compare below the logged accuracy and binary cross entropy loss for some epochs on a hold out test set.
+As you can see the convergence of the model trained on centered data with μ = 0 is much better. Additionally, you can compare below the accuracy and the loss during training for some epochs measured on a hold out test set (20 % split).
 
 <p align="center">
 <img src="loss_sample.png"></img>
 </p>
 
 It confirms that centering the data greatly improves the convergence of the model. Therefore, please always normalize or scale your data set. It can greatly affect the performance of your model. <br><br>
-That's all you need to know about gradient descent. There are many extensions of gradient descent that are not discussed in this article. In the next article we will discuss one of most popular extensions called stochastic gradient descent. Thank you for reading my article! I hope it helps you to get a better understanding on how backpropagation in neural networks actually works.
+That's all you need to know about gradient descent and backpropagation. There are many extensions of gradient descent that are not discussed in this article. In the next article we will discuss one of most popular extensions called stochastic gradient descent. Thank you for reading my article! I hope it helps you to get a better understanding on how backpropagation in neural networks actually works.
