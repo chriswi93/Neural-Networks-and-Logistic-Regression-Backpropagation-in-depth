@@ -82,7 +82,7 @@ def predict(self, x):
   return z, g
   
 def compute_gradients(self, x, y):
-  # forward pass to get logits (z) and probability (g) values
+  # forward pass: compute log odds (z) as inputs for preditions (g)
   z, g = self.predict(x)
         
   # compute gradients
