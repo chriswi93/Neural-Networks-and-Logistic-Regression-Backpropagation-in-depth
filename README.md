@@ -112,7 +112,7 @@ Last step is to adapt the model parameters in the direction of the computed grad
 </p>
 
 <h2>Convergence</h2>
-In practice forward propagation and backpropagation are repeated several times. It is guaranteed for logistic regression that the parameters converge to the global minimum. However, this statement does not apply for a neural network that approximates a non linear function. In this case the convergence is only guaranteed to a local minimum, because non linear functions are always not strictly convex. This is one reason why a linear model should be preferred when a data set is linearly separable. Below you can find the relevant parts of my vectorized implementation in Python that illustrates on how to compute the gradients and update the model parameters of logistic regression using numpy.<br>
+In practice forward propagation and backpropagation are repeated several times. It is guaranteed for logistic regression that the parameters converge to the global minimum. However, this statement does not apply for a neural network that approximates a non linear function. In this case the convergence is only guaranteed to a local minimum since non linear functions are never strictly convex. This is one reason why a linear model should be preferred when a data set is linearly separable. Below you can find the relevant parts of my vectorized implementation in Python that illustrates on how to compute the gradients and update the model parameters of logistic regression using numpy.<br>
 
 ```python
 def predict(self, x):
