@@ -48,7 +48,7 @@ The result is commonly known as sigmoid function.
 <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{120}&space;\newline&space;\sigma&space;(z)&space;=&space;\frac{1}{1&plus;e^{-z}}&space;\newline&space;\newline&space;z&space;=&space;wx&space;&plus;&space;b" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;\newline&space;\sigma&space;(z)&space;=&space;\frac{1}{1&plus;e^{-z}}&space;\newline&space;\newline&space;z&space;=&space;wx&space;&plus;&space;b" title="\newline \sigma (z) = \frac{1}{1+e^{-z}} \newline \newline z = wx + b" /></a>
 </p>
 
-It was shown how to derive sigmoid from odds and why it is better to predict logg odds ratio and not probability values directly. In the next section the loss used in logistic regression is discussed.
+It has been shown how to derive sigmoid from odds and why it is better to predict logg odds ratio and not probability values directly. In the next section the loss used in logistic regression is discussed.
 
 <h2>Loss and Optimization</h2>
 The loss that is minimized during training is known as binary cross entropy. It decreases if the predicted probability for the class labels g get closer to the true class labels y and is therefore an appropriate measure to monitor the learning progress and convergence of the model (see illustration below). 
