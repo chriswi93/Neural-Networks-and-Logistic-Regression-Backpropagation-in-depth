@@ -12,6 +12,40 @@ In general, logistic regression is a classification model that learns to predict
 <img src="logistic_regression.png"/>
 </p>
 
+<h2>Deriving Sigmoid from Odds</h2>
+
+Why is the sigmoid function required to transform the result of a linear function z = wx + b into probability values? Why do we not use regression to directly predict probabilities? The answer is: it is hard to predict probabilities directly. If the model is very confident about class one it might output a probability greater than one. But it is not possible to have probability values greater than one and the loss used in regression will penalize it. It turns at that the inability to model an upper or lower bound for the predicted variable in regression harms learning progress since the model is not allowed to be very confident about a certain class. Therefore it is easier to model odds ratio:
+
+<p align="center">
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{120}&space;odds&space;ratio=\frac{p}{1-p}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;odds&space;ratio=\frac{p}{1-p}" title="odds ratio=\frac{p}{1-p}" /></a>
+</p>
+
+We all know odds from sports. The variable p equals the probability that an event will happen and the denominator is the probability that it will not happen. A great advantage of encoding odds is that odds ratio has no upper bound. Therefore, it better fits the model assumptions for regression. But it still has the lower bound zero. In order to remove the lower bound we apply a simple trick. We take the natural logarithm of odds ratio.
+
+<p align="center">
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{120}&space;log(odds&space;ratio)=log\left&space;(&space;\frac{p}{1-p}\right&space;)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;log(odds&space;ratio)=log\left&space;(&space;\frac{p}{1-p}\right&space;)" title="log(odds ratio)=log\left ( \frac{p}{1-p}\right )" /></a>
+</p>
+
+Log odds ratio or simply logit is the value we would like to predict using a linear model z = wx + b. Therefore, we have an equation:
+
+<p align="center">
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{120}&space;wx&space;&plus;&space;b=log\left&space;(&space;\frac{p}{1-p}\right&space;)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;wx&space;&plus;&space;b=log\left&space;(&space;\frac{p}{1-p}\right&space;)" title="wx + b=log\left ( \frac{p}{1-p}\right )" /></a>
+</p>
+
+Then have to compute its inverse function to get p from log odds z:
+
+<p align="center">
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{120}&space;\newline&space;wx&space;&plus;&space;b=log\left&space;(&space;\frac{p}{1-p}\right&space;)&space;\newline&space;\newline&space;e^{wx&plus;b}=e^{log\left&space;(&space;\frac{p}{1-p}\right&space;)}=\frac{p}{1-p}&space;\newline&space;e^{wx&plus;b}(1-p)=e^{wx&plus;b}-e^{wx&plus;b}p=p&space;\newline&space;e^{wx&plus;b}=p&plus;e^{wx&plus;b}p=p(1&plus;e^{wx&plus;b})&space;\newline&space;p&space;=&space;\frac{e^{wx&plus;b}}{1&plus;e^{wx&plus;b}}&space;\newline&space;p&space;=&space;\frac{1}{1&plus;e^{wx&plus;b}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;\newline&space;wx&space;&plus;&space;b=log\left&space;(&space;\frac{p}{1-p}\right&space;)&space;\newline&space;\newline&space;e^{wx&plus;b}=e^{log\left&space;(&space;\frac{p}{1-p}\right&space;)}=\frac{p}{1-p}&space;\newline&space;e^{wx&plus;b}(1-p)=e^{wx&plus;b}-e^{wx&plus;b}p=p&space;\newline&space;e^{wx&plus;b}=p&plus;e^{wx&plus;b}p=p(1&plus;e^{wx&plus;b})&space;\newline&space;p&space;=&space;\frac{e^{wx&plus;b}}{1&plus;e^{wx&plus;b}}&space;\newline&space;p&space;=&space;\frac{1}{1&plus;e^{wx&plus;b}}" title="\newline wx + b=log\left ( \frac{p}{1-p}\right ) \newline \newline e^{wx+b}=e^{log\left ( \frac{p}{1-p}\right )}=\frac{p}{1-p} \newline e^{wx+b}(1-p)=e^{wx+b}-e^{wx+b}p=p \newline e^{wx+b}=p+e^{wx+b}p=p(1+e^{wx+b}) \newline p = \frac{e^{wx+b}}{1+e^{wx+b}} \newline p = \frac{1}{1+e^{wx+b}}" /></a>
+</p>
+
+The result is commonly known as sigmoid function.
+
+<p align="center">
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{120}&space;\newline&space;\sigma&space;(z)&space;=&space;\frac{1}{1&plus;e^{-z}}&space;\newline&space;\newline&space;z&space;=&space;wx&space;&plus;&space;b" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;\newline&space;\sigma&space;(z)&space;=&space;\frac{1}{1&plus;e^{-z}}&space;\newline&space;\newline&space;z&space;=&space;wx&space;&plus;&space;b" title="\newline \sigma (z) = \frac{1}{1+e^{-z}} \newline \newline z = wx + b" /></a>
+</p>
+
+Therefore, it was shown how to derive sigmoid from odds and why it is better to predict logg odds ratio and not probability values directly.
+
 <h2>Loss and Optimization</h2>
 The loss that is minimized during training is known as binary cross entropy. It decreases if the predicted probability for the class labels g get closer to the true class labels y and is therefore an appropriate measure to monitor the learning progress and convergence of the model (see illustration below). 
 <p align="center">
