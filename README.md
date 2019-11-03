@@ -14,7 +14,7 @@ In general, logistic regression is a classification model that learns to predict
 
 <h2>Deriving Sigmoid from Odds</h2>
 
-Why is the sigmoid function required to transform the result of a linear function z = wx + b into probability values? Why do we not use regression to directly predict probabilities? The answer is: it is hard to predict probabilities directly. If the model is very confident about class one it might output a probability greater than one. But it is not possible to have probability values greater than one and the loss used in regression will penalize it. It turns at that the inability to model an upper or lower bound for the predicted variable in regression harms learning progress since the model is not allowed to be very confident about a certain class. Therefore it is easier to model odds ratio:
+Why is the sigmoid function required to transform the result of a linear function z = wx + b into probability values? Why do we not use regression to directly predict probabilities? The answer is that it is quite hard to predict probabilities directly. If the model is very confident about class one it might output a probability greater than one. But it is not possible to have probability values greater than one and the loss used in regression will penalize it. It turns at that the inability to model an upper or lower bound for the predicted variable in regression harms learning progress since the model is not allowed to be very confident about a certain class. Therefore it is easier to model odds ratio:
 
 <p align="center">
 <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{120}&space;odds&space;ratio=\frac{p}{1-p}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;odds&space;ratio=\frac{p}{1-p}" title="odds ratio=\frac{p}{1-p}" /></a>
@@ -24,6 +24,10 @@ We all know odds from sports. The variable p equals the probability that an even
 
 <p align="center">
 <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{120}&space;log(odds&space;ratio)=log\left&space;(&space;\frac{p}{1-p}\right&space;)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;log(odds&space;ratio)=log\left&space;(&space;\frac{p}{1-p}\right&space;)" title="log(odds ratio)=log\left ( \frac{p}{1-p}\right )" /></a>
+</p>
+
+<p align="center">
+<img src="odds.png"/>
 </p>
 
 Log odds ratio or simply logit is the value we would like to predict using a linear model z = wx + b. Therefore, we have an equation:
